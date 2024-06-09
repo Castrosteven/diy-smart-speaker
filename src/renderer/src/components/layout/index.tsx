@@ -1,19 +1,16 @@
-import { ReactNode } from "react";
-import "./index.css";
-import { useAppContext } from "../../context/AppContext";
-import Topbar from "../topbar";
-function Layout({ children }: { children: ReactNode }) {
-  const { theme } = useAppContext();
+import MediaPlayer from '@renderer/widgets/weather'
+import { ReactNode } from 'react'
+
+function Layout(): ReactNode {
   return (
-    <div
-      className={`screen ${
-        theme === "dark" ? "bg-gray-800 text-white" : "bg-gray-300"
-      }`}
-    >
-      <Topbar />
-      <div className="p-8">{children}</div>
+    <div className="grid grid-cols-4 grid-rows-2 gap-4 h-screen text-xl font-bold p-5 bg-gray-800 ">
+      <div className="col-span-4 bg-gray-300">
+        <MediaPlayer />
+      </div>
+      <div className="col-span-2 bg-gray-200">Left Panel</div>
+      <div className="col-span-2 bg-gray-400">Right Panel</div>
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

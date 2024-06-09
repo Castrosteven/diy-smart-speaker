@@ -1,11 +1,12 @@
-import WidgetRenderer from "../../components/widgetRenderer";
+import { ReactNode } from 'react'
+import WidgetRenderer from '../../components/widgetRenderer'
 
-const MainPage = () => {
+const MainPage = (): ReactNode => {
   return (
     <div>
       <WidgetRenderer widgetId="musicPlayer" />
     </div>
-  );
-};
+  )
+}
 
-export default MainPage;
+export default MainPage

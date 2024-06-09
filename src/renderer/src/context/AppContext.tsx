@@ -1,21 +1,21 @@
-import { ReactNode, createContext, useContext } from "react";
-import { useSettings } from "../hooks/useSettings";
-import Layout from "../components/layout";
-import { Theme } from "../types";
+import { ReactNode, createContext, useContext } from 'react'
+import { useSettings } from '../hooks/useSettings'
+import Layout from '../components/layout'
+import { Theme } from '../types'
 
 interface Context {
-  theme: Theme;
-  updateTheme: () => void;
+  theme: Theme
+  updateTheme: () => void
 }
-const Context = createContext<Context>({} as Context);
+const Context = createContext<Context>({} as Context)
 
-export const AppContext = ({ children }: { children: ReactNode }) => {
-  const settings = useSettings();
+export const AppContext = (): ReactNode => {
+  const settings = useSettings()
   return (
     <Context.Provider value={settings}>
-      <Layout>{children}</Layout>
+      <Layout />
     </Context.Provider>
-  );
-};
+  )
+}
 
-export const useAppContext = () => useContext(Context);
+export const useAppContext = (): Context => useContext(Context)

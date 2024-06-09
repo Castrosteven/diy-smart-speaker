@@ -1,13 +1,10 @@
-import {
-  IoPlaySkipBackSharp,
-  IoPauseSharp,
-  IoPlaySkipForwardSharp,
-} from "react-icons/io5";
+import { ReactNode } from 'react'
+import { IoPlaySkipBackSharp, IoPauseSharp, IoPlaySkipForwardSharp } from 'react-icons/io5'
 
-export default function MediaPlayer() {
+const MediaPlayer = (): ReactNode => {
   return (
     <div className="flex justify-center items-center h-full w-full flex-col p-8">
-      <div className="h-2/3 w-full flex justify-center items-center">
+      <div className="h-full w-full flex justify-center items-center">
         <img
           className="h-full"
           src="https://m.media-amazon.com/images/I/71n0xmxpw7L._SL1400_.jpg"
@@ -31,5 +28,7 @@ export default function MediaPlayer() {
         </div>
       </div>
     </div>
-  );
+  )
 }
+
+export default MediaPlayer
